@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!--<form action="#" th:action="@{/findUser}" th:object="${userInfo}" method="post">-->
+<h1>User was found</h1>
+    <p><span th:text="${#httpServletRequest.getHeader('User-Agent')}">Agent</span></p>
+    <p><span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}">Date</span></p>
+<!--    <p><input type="text" th:field="*{userInfo.name}" /></p>-->
+<!--    <p><input type="text" th:field="*{userInfo.surname}" /></p>-->
+<!--    <p><input type="text" th:field="*{userInfo.patronymic}" /></p>-->
+    <p><button type="submit" value="Find">Find</button></p>
+    <p><a href="/userForm"><input type="button" value="Back" /></a></p>
+<!--</form>-->
+</body>
+</html>

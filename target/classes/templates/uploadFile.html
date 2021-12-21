@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="${message}" th:if="${message ne null}" class="alert alert-primary"></p>
+<form action="#" th:action="@{/upload}" enctype="multipart/form-data" method="post">
+    <p>File to upload: <input type="file" name="file"></p>
+    <p><input type="submit" value="Upload"> Press here to upload the file! </p>
+    <p>
+    <a href="/userForm">
+        <input type="button" value="Back" />
+    </a>
+    </p>
+</form>
+</body>
+</html>
