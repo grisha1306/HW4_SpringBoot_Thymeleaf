@@ -1,35 +1,38 @@
 package com.company.model;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.*;
+
+@Component
 public class UserInfo {
 
-    @NotNull
-    @Size(min=2, max=4)
+    @NotEmpty
+    @Pattern(regexp = "([\\D]*)", message = "Не должно быть чисел")
+    @Size(max=20)
     private String name;
 
-    @NotNull
-    @Size(min=2, max=4)
+    @NotEmpty
+    @Pattern(regexp = "([\\D]*)", message = "Не должно быть чисел")
+    @Size(max=20)
     private String surname;
 
-    @NotNull
+    @NotEmpty
+    @Pattern(regexp = "([\\D]*)", message = "Не должно быть чисел")
+    @Size(max=20)
     private String patronymic;
 
-    @NotNull
     @Min(18)
     private int age;
 
-    @NotNull
+    @Min(1)
     private int salary;
 
-    @NotNull
-    @Email
+    @NotEmpty
+    @Pattern(regexp = "\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*\\.\\w{2,}" , message = "Не формат почты")
     private String mail;
 
-    @NotNull
+    @NotEmpty
     private String workPlace;
 
     public String getName() {

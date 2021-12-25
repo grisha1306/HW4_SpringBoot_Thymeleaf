@@ -22,6 +22,8 @@
                 <tr>
                         <td>Patronymic:</td>
                         <td><input type="text" th:field="*{patronymic}"></input></td>
+                        <td th:if="${#fields.hasErrors('patronymic')}" th:errors="*{patronymic}">patronymic
+                                Error</td>
                 </tr>
                 <tr>
                         <td>Age:</td>
@@ -32,6 +34,8 @@
                 <tr>
                         <td>Salary:</td>
                         <td><input type="text" th:field="*{salary}"></input></td>
+                        <td th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}">salary
+                                Error</td>
 
                 </tr>
 
@@ -46,6 +50,8 @@
                 <tr>
                         <td>WorkPlace:</td>
                         <td><input type="text" th:field="*{workPlace}"></input></td>
+                        <td th:if="${#fields.hasErrors('workPlace')}" th:errors="*{workPlace}">workPlace
+                                Error</td>
 
                 </tr>
         </table>

@@ -21,9 +21,11 @@ public class WriteInFile {
             bufferedWriter.write("/");
             bufferedWriter.write(userInfo.getPatronymic());
             bufferedWriter.write("/");
-            bufferedWriter.write(userInfo.getAge());
+            int age = userInfo.getAge();
+            bufferedWriter.write(String.valueOf(age));
             bufferedWriter.write("/");
-            bufferedWriter.write(userInfo.getSalary());
+            int salary = userInfo.getSalary();
+            bufferedWriter.write(String.valueOf(salary));
             bufferedWriter.write("/");
             bufferedWriter.write(userInfo.getMail());
             bufferedWriter.write("/");

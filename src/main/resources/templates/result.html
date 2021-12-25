@@ -5,38 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<table class="table datatable">
-    <tbody>
-        <tr>
-            <td>Name:</td>
-            <td th:text="${userInfo.name}">Text ...</td>
-        </tr>
-        <tr>
-            <td>Surname:</td>
-            <td th:text="${userInfo.surname}">Text ...</td>-->
-        </tr>
-        <tr>
-            <td>Patronymic:</td>
-            <td th:text="${userInfo.patronymic}">Text ...</td>-->
-        </tr>
-        <tr>
-            <td>Age:</td>
-            <td th:text="${userInfo.age}">Text ...</td>-->
-        </tr>
-        <tr>
-            <td>Salary:</td>
-            <td th:text="${userInfo.salary}">Text ...</td>-->
-        </tr>
-        <tr>
-            <td>Email:</td>
-            <td th:text="${userInfo.mail}">Text ...</td>-->
-        </tr>
-        <tr>
-            <td>Work Place:</td>
-            <td th:text="${userInfo.workPlace}">Text ...</td>-->
-        </tr>
-    </tbody>
-</table>
+<h1>User was Add</h1>
+<p>Name : <span th:text="*{userInfo.name}"></span> </p>
+<p>Surname : <span th:text="*{userInfo.surname}"></span> </p>
+<p>Patronymic : <span th:text="*{userInfo.patronymic}"></span> </p>
+<p>Age : <span th:text="*{userInfo.age}"></span> </p>
+<p>Salary : <span th:text="*{userInfo.salary}"></span> </p>
+<p>Email : <span th:text="*{userInfo.mail}"></span></p>
+<p>WorkPlace : <span th:text="*{userInfo.workPlace}"></span> </p>
+
 <a href="/userForm">
     <input type="button" value="Add new user"/>
 </a>

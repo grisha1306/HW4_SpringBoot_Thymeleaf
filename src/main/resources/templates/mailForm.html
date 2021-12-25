@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email</title>
+</head>
+<body>
+<form action="#" th:action="@{/sendMail}" th:object="${sendMail}" method="post">
+    <table>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}" /></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">mail
+                Error</td>
+        </tr>
+        <tr>
+            <td>Subject:</td>
+            <td><input type="text" th:field="*{subject}" /></td>
+        </tr>
+        <tr>
+            <td>Message:</td>
+            <td><input type="text" th:field="*{message}" /></td>
+            <td th:if="${#fields.hasErrors('message')}" th:errors="*{message}">mail
+                Error</td>
+        </tr>
+    </table>
+    <p><button type="submit" value="Find">Send Message</button></p>
+    <p><a href="/getForm"><input type="button" value="Back" /></a></p>
+</form>
+</body>
+</html>

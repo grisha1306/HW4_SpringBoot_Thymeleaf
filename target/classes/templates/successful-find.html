@@ -5,15 +5,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<!--<form action="#" th:action="@{/findUser}" th:object="${userInfo}" method="post">-->
 <h1>User was found</h1>
-    <p><span th:text="${#httpServletRequest.getHeader('User-Agent')}">Agent</span></p>
-    <p><span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}">Date</span></p>
-<!--    <p><input type="text" th:field="*{userInfo.name}" /></p>-->
-<!--    <p><input type="text" th:field="*{userInfo.surname}" /></p>-->
-<!--    <p><input type="text" th:field="*{userInfo.patronymic}" /></p>-->
-    <p><button type="submit" value="Find">Find</button></p>
-    <p><a href="/userForm"><input type="button" value="Back" /></a></p>
-<!--</form>-->
+    <p>Agent : <span th:text="${#httpServletRequest.getHeader('User-Agent')}"></span></p>
+    <p>Date : <span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></span></p>
+    <p>Name : <span th:text="*{userInfo.name}"></span> </p>
+    <p>Surname : <span th:text="*{userInfo.surname}"></span> </p>
+    <p>Patronymic : <span th:text="*{userInfo.patronymic}"></span> </p>
+    <p>Age : <span th:text="*{userInfo.age}"></span> </p>
+    <p>Salary : <span th:text="*{userInfo.salary}"></span> </p>
+    <p>Email : <span th:style="'color: red'" th:text="*{userInfo.mail}"></span> &emsp; &emsp; &emsp; Remember this Email, if you want send Message to this User</p>
+    <p>WorkPlace : <span th:text="*{userInfo.workPlace}"></span> </p>
+
+    <p><a href="/sendMail"><input type="button" value="Send Email" /></a></p>
+    <p><a href="/getForm"><input type="button" value="Back" /></a></p>
 </body>
 </html>

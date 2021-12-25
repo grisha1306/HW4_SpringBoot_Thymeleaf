@@ -9,13 +9,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
+
 
 @Controller
 public class FindController {
 
     @Autowired
     private ReadFile readFile;
+
 
     @GetMapping("/getForm")
     public String findUserForm(Model model) {
@@ -24,13 +25,17 @@ public class FindController {
     }
 
     @PostMapping("/getForm")
-    public String submitFindForm(@ModelAttribute FindUser findUser) {
-        UserInfo userInfo = readFile.find(findUser);
-//        model.addAttribute("userInfo" , userInfo);
-        if (userInfo != null) {
-            return "successful-find";
+    public String submitFindForm(@ModelAttribute UserInfo userInfoFromForm) {
+        boolean userWasFound = readFile.find(userInfoFromForm);
+        if (!userWasFound) {
+            return "redirect:/showUserNotFound";
         }
 
+        return "successful-find";
+    }
+
+    @GetMapping("/showUserNotFound")
+    public String showUserNotFound() {
         return "userNotFound";
     }
 
