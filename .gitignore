@@ -20,6 +20,6 @@
 *.rar
 
 .idea/
-.target/
+target/**
 
 hs_err_pid*
