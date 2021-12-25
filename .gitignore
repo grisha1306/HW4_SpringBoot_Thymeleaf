@@ -20,6 +20,6 @@
 *.rar
 
 .idea/
-.target/classes/templates/
+.target/
 
 hs_err_pid*
